@@ -6,10 +6,6 @@ body {
     line-height: 1.6;
 }
 
-strong {
-    color: #d8d8e4;
-}
-
 header, section, footer {
     max-width: 900px;
     margin: auto;
@@ -26,7 +22,7 @@ header {
     position: relative;
 }
 
-/* Overlay */
+/* Optional: Add an overlay to ensure text remains readable */
 header::before {
     content: '';
     position: absolute;
@@ -34,7 +30,7 @@ header::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.4);
     z-index: 1;
 }
 
@@ -43,22 +39,12 @@ header * {
     z-index: 2;
 }
 
-h1, h2, h3, h4 {
+h1, h2 {
     color: #f4a261;
-    text-align: center;
-}
-
-h3, h4 {
-    text-transform: uppercase;
-}
-
-.h-weak {
-    color: #8E8D8DFF;
-    text-transform: none;
 }
 
 a {
-    color: #5186e8;
+    color: #f4a261;
     text-decoration: none;
 }
 
@@ -72,7 +58,7 @@ a:hover {
 }
 
 .resume-button {
-    background: #5186e8;
+    background: #f4a261;
     color: #111;
     padding: 0.5em 1em;
     border: none;
@@ -83,7 +69,7 @@ a:hover {
 }
 
 .resume-button:hover {
-    background: #76a2ff;
+    background: #e07a3f;
 }
 
 .portfolio-item {
@@ -123,6 +109,51 @@ a:hover {
     transform: scale(1.05);
 }
 
+/* Single centered inline image */
+.centered-image {
+    display: block;
+    margin: 1.5em auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Variations for different sizes */
+.centered-image.small {
+    max-width: 300px;
+}
+
+.centered-image.medium {
+    max-width: 500px;
+}
+
+.centered-image.large {
+    max-width: 700px;
+}
+
+/* With caption */
+.image-with-caption {
+    text-align: center;
+    margin: 1.5em 0;
+}
+
+.image-with-caption img {
+    display: block;
+    margin: 0 auto 0.5em auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.image-with-caption .caption {
+    font-size: 0.9em;
+    color: #999;
+    font-style: italic;
+    margin-top: 0.5em;
+}
+
 /* Lightbox */
 #lightbox {
     position: fixed;
@@ -150,12 +181,11 @@ footer {
 
 .social-links {
     margin-top: 1em;
-    font-size: 0.8em;
 }
 
 .social-links a {
     margin: 0 0.5em;
-    color: #5186e8;
+    color: #f4a261;
     font-weight: bold;
 }
 
