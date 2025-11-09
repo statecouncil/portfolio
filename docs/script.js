@@ -23,6 +23,6 @@ document.querySelectorAll('.spoiler-toggle').forEach(button => {
         const content = button.nextElementSibling;
         const expanded = content.style.display === 'block';
         content.style.display = expanded ? 'none' : 'block';
-        button.textContent = expanded ? 'More...' : 'Less...';
+        button.textContent = expanded ? 'More!' : 'Less!';
     });
 });

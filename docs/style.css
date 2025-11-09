@@ -6,6 +6,10 @@ body {
     line-height: 1.6;
 }
 
+strong {
+    color: #d8d8e4;
+}
+
 header, section, footer {
     max-width: 900px;
     margin: auto;
@@ -39,12 +43,22 @@ header * {
     z-index: 2;
 }
 
-h1, h2 {
+h1, h2, h3, h4 {
     color: #f4a261;
+    text-align: center;
+}
+
+h3, h4 {
+    text-transform: uppercase;
+}
+
+.h-weak {
+    color: #8E8D8DFF;
+    text-transform: none;
 }
 
 a {
-    color: #f4a261;
+    color: #5186e8;
     text-decoration: none;
 }
 
@@ -58,7 +72,7 @@ a:hover {
 }
 
 .resume-button {
-    background: #f4a261;
+    background: #5186e8;
     color: #111;
     padding: 0.5em 1em;
     border: none;
@@ -69,7 +83,7 @@ a:hover {
 }
 
 .resume-button:hover {
-    background: #e07a3f;
+    background: #76a2ff;
 }
 
 .portfolio-item {
@@ -141,7 +155,7 @@ footer {
 
 .social-links a {
     margin: 0 0.5em;
-    color: #f4a261;
+    color: #5186e8;
     font-weight: bold;
 }
 
