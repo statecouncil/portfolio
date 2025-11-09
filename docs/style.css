@@ -22,6 +22,7 @@ header {
     position: relative;
 }
 
+
 /* Optional: Add an overlay to ensure text remains readable */
 header::before {
     content: '';
