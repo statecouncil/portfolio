@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Game Design Portfolio – Your Name</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Your Name</h1>
+    <p class="bio">Game Designer | Level Design Specialist | <a href="mailto:you@example.com">you@example.com</a></p>
+    <button class="resume-button" onclick="window.location.href='resume.pdf'">Download Resume (PDF)</button>
+</header>
+
+<section id="overview">
+    <h2>Overview</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Use this space to summarize your background, design philosophy, and professional focus. Mention notable collaborations, academic research, or shipped projects.</p>
+</section>
+
+<section id="portfolio">
+    <h2>Portfolio</h2>
+
+    <div class="portfolio-item">
+        <h3>Project Title One</h3>
+        <div class="tags">
+            <span class="tag">Level Design</span>
+            <span class="tag">Source Engine</span>
+            <span class="tag">Multiplayer</span>
+        </div>
+        <div class="gallery">
+            <img src="placeholder1.jpg" alt="Screenshot 1">
+            <img src="placeholder2.jpg" alt="Screenshot 2">
+            <img src="placeholder3.jpg" alt="Screenshot 3">
+        </div>
+        <p>Brief description of the project: your role, tools used, notable challenges, and what it demonstrates about your design skills.</p>
+        <div class="spoiler">
+            <button onclick="toggleSpoiler(this)">More...</button>
+            <div class="spoiler-content">
+                <p>Extended description: discuss design goals, iteration process, blockout stages, playtesting, and reflections. Highlight what made this project unique or instructive in your development as a designer.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-item">
+        <h3>Project Title Two</h3>
+        <div class="tags">
+            <span class="tag">Gameplay Systems</span>
+            <span class="tag">Unity</span>
+            <span class="tag">Prototyping</span>
+        </div>
+        <div class="gallery">
+            <img src="placeholder4.jpg" alt="Screenshot 1">
+            <img src="placeholder5.jpg" alt="Screenshot 2">
+        </div>
+        <p>Description text here. Include design intent, challenges overcome, and what you learned through iteration.</p>
+        <div class="spoiler">
+            <button onclick="toggleSpoiler(this)">More...</button>
+            <div class="spoiler-content">
+                <p>Additional project commentary: describe scripting solutions, mechanics tuning, or player feedback integration. Summarize results and key takeaways.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add more portfolio-item blocks as needed -->
+</section>
+
+<footer>
+    <p>© 2025 Your Name</p>
+    <div class="social-links">
+        <a href="#">LinkedIn</a> |
+        <a href="#">Steam</a> |
+        <a href="#">itch.io</a> |
+        <a href="#">ArtStation</a> |
+        <a href="#">GitHub</a>
+    </div>
+</footer>
+
+<script>
+    // Lightbox
+    const lightbox = document.createElement('div');
+    lightbox.id = 'lightbox';
+    document.body.appendChild(lightbox);
+
+    document.querySelectorAll('.gallery img').forEach(img => {
+        img.addEventListener('click', () => {
+            lightbox.innerHTML = '';
+            const full = document.createElement('img');
+            full.src = img.src;
+            lightbox.appendChild(full);
+            lightbox.style.display = 'flex';
+        });
+    });
+    lightbox.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+    });
+
+    // Spoiler toggle
+    function toggleSpoiler(button) {
+        const content = button.nextElementSibling;
+        const expanded = content.style.display === 'block';
+        content.style.display = expanded ? 'none' : 'block';
+        button.textContent = expanded ? 'More...' : 'Less...';
+    }
+</script>
+
+</body>
+</html>

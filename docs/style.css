@@ -1,0 +1,146 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #111;
+    color: #eee;
+    line-height: 1.6;
+}
+
+header, section, footer {
+    max-width: 900px;
+    margin: auto;
+    padding: 2em;
+}
+
+header {
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+h1, h2 {
+    color: #f4a261;
+}
+
+a {
+    color: #f4a261;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.bio {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+.resume-button {
+    background: #f4a261;
+    color: #111;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.resume-button:hover {
+    background: #e07a3f;
+}
+
+.portfolio-item {
+    margin-bottom: 3em;
+}
+
+.tags {
+    margin: 0.5em 0 1em 0;
+}
+
+.tag {
+    display: inline-block;
+    background: #333;
+    color: #ccc;
+    border-radius: 3px;
+    padding: 0.2em 0.6em;
+    font-size: 0.85em;
+    margin-right: 0.3em;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+}
+
+.gallery img {
+    width: 200px;
+    height: 120px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: transform 0.2s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Lightbox */
+#lightbox {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+}
+
+footer {
+    text-align: center;
+    border-top: 1px solid #333;
+    font-size: 0.9em;
+    color: #999;
+}
+
+.social-links {
+    margin-top: 1em;
+}
+
+.social-links a {
+    margin: 0 0.5em;
+    color: #f4a261;
+    font-weight: bold;
+}
+
+/* Spoiler (More...) */
+.spoiler {
+    margin-top: 0.5em;
+}
+
+.spoiler button {
+    background: none;
+    border: none;
+    color: #f4a261;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0;
+    font-size: 1em;
+}
+
+.spoiler-content {
+    display: none;
+    margin-top: 0.5em;
+    border-left: 3px solid #333;
+    padding-left: 1em;
+    color: #ccc;
+}
