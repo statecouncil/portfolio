@@ -13,7 +13,7 @@ strong {
 header, section, footer {
     max-width: 900px;
     margin: auto;
-    padding: 2em;
+    padding: 1em 2em;
 }
 
 header {
@@ -224,4 +224,19 @@ footer {
     border-left: 3px solid #333;
     padding-left: 1em;
     color: #ccc;
+}
+
+@media (max-width: 768px) {
+    header, section, footer {
+        padding: 1em;
+    }
+
+    .gallery img {
+        width: calc(50% - 0.25em); /* Two images per row instead of fixed 200px */
+        max-width: 150px; /* Prevent them from getting too large */
+    }
+
+    .gallery {
+        justify-content: center; /* Center the gallery on mobile */
+    }
 }
