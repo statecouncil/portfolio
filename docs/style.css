@@ -1,8 +1,10 @@
 /* Portfolio Category Styles */
 .portfolio-category {
     margin-bottom: 1.5em;
-    border-left: 3px solid #333; /* Thin grey line on the left, same as spoiler content */
-    padding-left: 1em; /* Add some spacing from the border */
+    border-left: 3px solid #333;
+    border-right: 3px solid #333;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
 }
 
 .category-toggle {
@@ -78,12 +80,28 @@ header * {
     z-index: 2;
 }
 
-h1, h2, h3, h4 {
+h1 {
+    //font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+h1::before,
+h1::after {
+    content: "";
+    flex: 1;
+    height: 3px;
+    background: #333;
+}
+
+h1, h2, h3, h4, h5 {
     color: #f4a261;
     text-align: center;
 }
 
-h3, h4 {
+h3, h4, h5 {
     text-transform: uppercase;
 }
 
@@ -99,6 +117,14 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+p {
+    text-align: justify;
+}
+
+li {
+    text-align: left;
 }
 
 .bio {
@@ -131,26 +157,44 @@ a:hover {
     transform: rotate(-90deg);
 }
 
+/* Center category title while keeping arrow on the left */
+.category-toggle {
+    cursor: pointer;
+    padding: 1em 0;
+    margin: 0 auto;
+    margin-left: -2em;
+    background: transparent;
+    transition: background 0.2s ease;
+    user-select: none;
+    display: inline-flex; /* Treat text + arrow as one unit */
+    align-items: center;
+    gap: 0.5em;
+    text-align: center;
+}
+
+.portfolio-category {
+    text-align: center; /* Centers the whole toggle in its container */
+}
+
+.category-arrow {
+    transition: transform 0.3s ease;
+    font-size: 0.8em;
+    color: #f4a261;
+}
+
 .portfolio-item {
     margin-bottom: 2em;
     padding: 1.5em;
     background: #111;
-    //border-radius: 6px;
-    //border: 1px solid #2a2a2a;
 }
 
 .portfolio-item:last-child {
     margin-bottom: 0;
 }
 
-.portfolio-item h4 {
-    text-align: left;
-    margin-top: 0;
-    margin-bottom: 0.5em;
-}
-
 .tags {
     margin: 0.5em 0 1em 0;
+    text-align: left;
 }
 
 .tag {
@@ -293,9 +337,14 @@ footer {
 .spoiler-content {
     display: none;
     margin-top: 0.5em;
-    border-left: 3px solid #333;
+    
+    border-left: 2px solid #333;
+    border-right: 2px solid #333;
+    
     padding-left: 1em;
+    padding-right: 1em;
     color: #ccc;
+    border-bottom: 2px solid #333;
 }
 
 @media (max-width: 768px) {

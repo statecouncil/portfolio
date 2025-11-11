@@ -23,7 +23,7 @@ document.querySelectorAll('.image-with-caption img').forEach(img => {
         lightbox.appendChild(full);
         lightbox.style.display = 'flex';
     });
-    
+
     // Add cursor pointer to indicate clickability
     img.style.cursor = 'pointer';
 });
@@ -37,7 +37,7 @@ document.querySelectorAll('.centered-image').forEach(img => {
         lightbox.appendChild(full);
         lightbox.style.display = 'flex';
     });
-    
+
     // Add cursor pointer to indicate clickability
     img.style.cursor = 'pointer';
 });
@@ -48,11 +48,26 @@ lightbox.addEventListener('click', () => {
 
 // Spoiler toggle behavior
 document.querySelectorAll('.spoiler-toggle').forEach(button => {
+    // Set initial state - spoilers start collapsed (content hidden)
+    button.classList.add('collapsed');
+    
     button.addEventListener('click', () => {
         const content = button.nextElementSibling;
-        const expanded = content.style.display === 'block';
-        content.style.display = expanded ? 'none' : 'block';
-        button.textContent = expanded ? 'Tell me more!' : 'Tell me less!';
+        const isCurrentlyHidden = content.style.display === 'none' || content.style.display === '';
+        
+        // Toggle content visibility
+        content.style.display = isCurrentlyHidden ? 'block' : 'none';
+        
+        // Toggle collapsed class for arrow animation
+        button.classList.toggle('collapsed', !isCurrentlyHidden);
+        
+        // Find the text node (not span) and update it
+        for (let node of button.childNodes) {
+            if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
+                node.textContent = isCurrentlyHidden ? 'Tell me less!' : 'Tell me more!';
+                break;
+            }
+        }
     });
 });
 
@@ -61,7 +76,7 @@ document.querySelectorAll('.category-toggle').forEach(toggle => {
     toggle.addEventListener('click', () => {
         const content = toggle.nextElementSibling;
         const isCollapsed = content.classList.contains('collapsed');
-        
+
         if (isCollapsed) {
             content.classList.remove('collapsed');
             toggle.classList.remove('collapsed');
