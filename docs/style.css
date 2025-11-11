@@ -1,39 +1,6 @@
-/* Portfolio Category Styles */
-.portfolio-category {
-    margin-bottom: 1.5em;
-    border-left: 3px solid #333;
-    border-right: 3px solid #333;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-}
-
-.category-toggle {
-    cursor: pointer;
-    padding: 1em 0; /* Remove horizontal padding since we now have padding-left on the parent */
-    margin: 0;
-    background: transparent;
-    transition: background 0.2s ease;
-    user-select: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5em;
-}
-
-.category-toggle:hover {
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.category-content {
-    padding: 0 0 1em 0; /* Remove horizontal padding since parent now has padding-left */
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-}
-
-.category-content.collapsed {
-    max-height: 0;
-    padding: 0;
-}
+/* ────────────────────────────────
+   Global Styles
+────────────────────────────────── */
 
 body {
     font-family: Arial, sans-serif;
@@ -43,9 +10,20 @@ body {
     line-height: 1.6;
 }
 
-strong {
-    color: #d8d8e4;
+strong { color: #d8d8e4; }
+
+a {
+    color: #5186e8;
+    text-decoration: none;
 }
+a:hover { text-decoration: underline; }
+
+p { text-align: justify; }
+li { text-align: left; }
+
+/* ────────────────────────────────
+   Layout Containers
+────────────────────────────────── */
 
 header, section, footer {
     max-width: 900px;
@@ -53,41 +31,63 @@ header, section, footer {
     padding: 1em 2em;
 }
 
+/* Header background overlay */
 header {
     text-align: center;
     border-bottom: 1px solid #333;
-    background-image: url('rotunda/top_stitched.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: url('rotunda/top_stitched.png') center / cover no-repeat;
     position: relative;
 }
-
-/* Overlay */
 header::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background: rgba(0, 0, 0, 0.7);
     z-index: 1;
 }
-
 header * {
     position: relative;
     z-index: 2;
 }
 
+/* Footer */
+footer {
+    text-align: center;
+    border-top: 1px solid #333;
+    font-size: 0.9em;
+    color: #999;
+}
+.social-links {
+    margin-top: 1em;
+}
+.social-links a {
+    margin: 0 0.5em;
+    color: #f4a261;
+    font-weight: bold;
+}
+
+/* ────────────────────────────────
+   Headings
+────────────────────────────────── */
+
+h1, h2, h3, h4, h5 {
+    color: #f4a261;
+    text-align: center;
+}
+h3, h4, h5 { text-transform: uppercase; }
+
+.h-weak {
+    color: #8e8d8dff;
+    text-transform: none;
+}
+
+/* Decorative line around main heading */
 h1 {
-    //font-size: 2em;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1em;
 }
-
 h1::before,
 h1::after {
     content: "";
@@ -96,40 +96,13 @@ h1::after {
     background: #333;
 }
 
-h1, h2, h3, h4, h5 {
-    color: #f4a261;
-    text-align: center;
-}
-
-h3, h4, h5 {
-    text-transform: uppercase;
-}
-
-.h-weak {
-    color: #8E8D8DFF;
-    text-transform: none;
-}
-
-a {
-    color: #5186e8;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-p {
-    text-align: justify;
-}
-
-li {
-    text-align: left;
-}
+/* ────────────────────────────────
+   Buttons & Bio
+────────────────────────────────── */
 
 .bio {
-    margin-top: 0.5em;
-    margin-bottom: 1em;
+    margin: 0.5em 0 1em;
+    text-align: center;
 }
 
 .resume-button {
@@ -142,61 +115,77 @@ li {
     cursor: pointer;
     transition: background 0.2s ease;
 }
-
 .resume-button:hover {
     background: #76a2ff;
 }
 
+/* ────────────────────────────────
+   Portfolio Categories
+────────────────────────────────── */
+
+.portfolio-category {
+    margin-bottom: 1.5em;
+    border-left: 3px solid #333;
+    border-right: 3px solid #333;
+    padding: 0 0.5em;
+    text-align: center;
+}
+
+/* Toggle header */
+.category-toggle {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    padding: 1em 0;
+    margin: 0 auto;
+    margin-left: -2em; /* nudges arrow-text pair */
+    background: transparent;
+    transition: background 0.2s ease;
+    user-select: none;
+    text-align: center;
+}
+.category-toggle:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Arrow behavior */
 .category-arrow {
     transition: transform 0.3s ease;
     font-size: 0.8em;
     color: #f4a261;
 }
-
 .category-toggle.collapsed .category-arrow {
     transform: rotate(-90deg);
 }
 
-/* Center category title while keeping arrow on the left */
-.category-toggle {
-    cursor: pointer;
-    padding: 1em 0;
-    margin: 0 auto;
-    margin-left: -2em;
-    background: transparent;
-    transition: background 0.2s ease;
-    user-select: none;
-    display: inline-flex; /* Treat text + arrow as one unit */
-    align-items: center;
-    gap: 0.5em;
-    text-align: center;
+/* Expandable content */
+.category-content {
+    padding-bottom: 1em;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+.category-content.collapsed {
+    max-height: 0;
+    padding: 0;
 }
 
-.portfolio-category {
-    text-align: center; /* Centers the whole toggle in its container */
-}
-
-.category-arrow {
-    transition: transform 0.3s ease;
-    font-size: 0.8em;
-    color: #f4a261;
-}
+/* ────────────────────────────────
+   Portfolio Items
+────────────────────────────────── */
 
 .portfolio-item {
     margin-bottom: 2em;
     padding: 1.5em;
     background: #111;
 }
-
-.portfolio-item:last-child {
-    margin-bottom: 0;
-}
+.portfolio-item:last-child { margin-bottom: 0; }
 
 .tags {
-    margin: 0.5em 0 1em 0;
+    margin: 0.5em 0 1em;
     text-align: left;
 }
-
 .tag {
     display: inline-block;
     background: #333;
@@ -207,12 +196,15 @@ li {
     margin-right: 0.3em;
 }
 
+/* ────────────────────────────────
+   Image Galleries
+────────────────────────────────── */
+
 .gallery {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5em;
 }
-
 .gallery img {
     width: 200px;
     height: 120px;
@@ -221,12 +213,14 @@ li {
     border-radius: 4px;
     transition: transform 0.2s ease;
 }
-
 .gallery img:hover {
     transform: scale(1.05);
 }
 
-/* Single centered inline image */
+/* ────────────────────────────────
+   Inline Images and Captions
+────────────────────────────────── */
+
 .centered-image {
     display: block;
     margin: 1.5em auto;
@@ -235,35 +229,22 @@ li {
     border-radius: 4px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
+.centered-image.small  { max-width: 300px; }
+.centered-image.medium { max-width: 500px; }
+.centered-image.large  { max-width: 700px; }
 
-/* Variations for different sizes */
-.centered-image.small {
-    max-width: 300px;
-}
-
-.centered-image.medium {
-    max-width: 500px;
-}
-
-.centered-image.large {
-    max-width: 700px;
-}
-
-/* With caption */
 .image-with-caption {
     text-align: center;
     margin: 1.5em 0;
 }
-
 .image-with-caption img {
     display: block;
-    margin: 0 auto 0.5em auto;
+    margin: 0 auto 0.5em;
     max-width: 100%;
     height: auto;
     border-radius: 4px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
-
 .image-with-caption .caption {
     font-size: 0.9em;
     color: #999;
@@ -271,46 +252,32 @@ li {
     margin-top: 0.5em;
 }
 
-/* Lightbox */
+/* ────────────────────────────────
+   Lightbox
+────────────────────────────────── */
+
 #lightbox {
     position: fixed;
-    top: 0; left: 0;
-    width: 100vw; height: 100vh;
-    background: rgba(0,0,0,0.9);
+    inset: 0;
     display: none;
     justify-content: center;
     align-items: center;
+    background: rgba(0,0,0,0.9);
     z-index: 10;
 }
-
 #lightbox img {
     max-width: 90%;
     max-height: 90%;
     border-radius: 8px;
 }
 
-footer {
-    text-align: center;
-    border-top: 1px solid #333;
-    font-size: 0.9em;
-    color: #999;
-}
+/* ────────────────────────────────
+   Spoiler ("More...") Elements
+────────────────────────────────── */
 
-.social-links {
-    margin-top: 1em;
-}
-
-.social-links a {
-    margin: 0 0.5em;
-    color: #f4a261;
-    font-weight: bold;
-}
-
-/* Spoiler (More...) */
 .spoiler {
     margin-top: 0.5em;
 }
-
 .spoiler button {
     background: none;
     border: none;
@@ -323,42 +290,39 @@ footer {
     align-items: center;
     gap: 0.5em;
 }
-
 .spoiler-arrow {
     transition: transform 0.3s ease;
     font-size: 0.8em;
     color: #f4a261;
 }
-
 .spoiler button.collapsed .spoiler-arrow {
     transform: rotate(-90deg);
 }
-
 .spoiler-content {
     display: none;
     margin-top: 0.5em;
-    
-    border-left: 2px solid #333;
-    border-right: 2px solid #333;
-    
-    padding-left: 1em;
-    padding-right: 1em;
+    padding: 0 1em;
     color: #ccc;
-    border-bottom: 2px solid #333;
+    border: 2px solid #333;
+    border-top: none;
 }
+
+/* ────────────────────────────────
+   Responsive Adjustments
+────────────────────────────────── */
 
 @media (max-width: 768px) {
     header, section, footer {
         padding: 1em;
     }
 
-    .gallery img {
-        width: calc(50% - 0.25em); /* Two images per row instead of fixed 200px */
-        max-width: 150px; /* Prevent them from getting too large */
+    .gallery {
+        justify-content: center;
     }
 
-    .gallery {
-        justify-content: center; /* Center the gallery on mobile */
+    .gallery img {
+        width: calc(50% - 0.25em);
+        max-width: 150px;
     }
 
     .category-toggle {
