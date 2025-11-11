@@ -55,3 +55,19 @@ document.querySelectorAll('.spoiler-toggle').forEach(button => {
         button.textContent = expanded ? 'Tell me more!' : 'Tell me less!';
     });
 });
+
+// Category toggle behavior
+document.querySelectorAll('.category-toggle').forEach(toggle => {
+    toggle.addEventListener('click', () => {
+        const content = toggle.nextElementSibling;
+        const isCollapsed = content.classList.contains('collapsed');
+        
+        if (isCollapsed) {
+            content.classList.remove('collapsed');
+            toggle.classList.remove('collapsed');
+        } else {
+            content.classList.add('collapsed');
+            toggle.classList.add('collapsed');
+        }
+    });
+});

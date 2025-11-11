@@ -10,7 +10,8 @@
 
 <header>
     <h1>Paul Frank Clausen</h1>
-    <p class="bio">Level Designer | Student: Game Design and Development | <a href="mailto:you@example.com">you@example.com</a></p>
+    <p class="bio">Level Designer | Student: Game Design and Development | <a href="mailto:you@example.com">you@example.com</a>
+    </p>
     <button class="resume-button" onclick="window.location.href='resume.pdf'">Resume (PDF, German)</button>
     <div class="social-links">
         <a href="#">Steam</a> |
@@ -22,152 +23,401 @@
 
 <section id="overview">
     <p><strong>Hi, I'm Paul.</strong></p>
-    <p>I'm a student of <strong>Game Design and Development</strong> at Macromedia University of Applied Sciences in Cologne, Germany and an independent level designer for the Source Engine. My work focuses on <strong>level design and environmental storytelling</strong>, with additional experience in <strong>game writing</strong> and <strong>scripting</strong>.</p>
-    <p>This portfolio presents selected projects and retrospectives that have shaped my perspective as both a player and a designer of games.</p>
+    <p>I'm a student of <strong>Game Design and Development</strong> at Macromedia University of Applied Sciences in
+        Cologne, Germany and an independent level designer for the Source Engine. My work focuses on <strong>level
+            design and environmental storytelling</strong>, with additional experience in <strong>game writing</strong>
+        and <strong>scripting</strong>.</p>
+    <p>This portfolio presents selected projects and retrospectives that have shaped my perspective as both a player and
+        a designer of games.</p>
 </section>
 
 <section id="portfolio">
     <h2>Portfolio</h2>
 
-    <div class="portfolio-item">
-        <h3>Rotunda <span class="h-weak">(Team Fortress 2 Level)</span></h3>
-        <div class="tags">
-            <span class="tag">Level Design</span>
-            <span class="tag">Source Engine</span>
-        </div>
-        <div class="gallery">
-            <img src="rotunda/01.jpg" alt="Screenshot">
-            <img src="rotunda/02.jpg" alt="Screenshot">
-            <img src="rotunda/03.jpg" alt="Screenshot">
-            <img src="rotunda/04.jpg" alt="Screenshot">
-            <img src="rotunda/05.jpg" alt="Screenshot">
-            <img src="rotunda/06.jpg" alt="Screenshot">
-            <img src="rotunda/07.jpg" alt="Screenshot">
-            <img src="rotunda/08.jpg" alt="Screenshot">
-            <img src="rotunda/10.jpg" alt="Screenshot">
-            <img src="rotunda/11.jpg" alt="Screenshot">
-            <img src="rotunda/12.jpg" alt="Screenshot">
-            <img src="rotunda/13.jpg" alt="Screenshot">
-        </div>
-        <p>Rotunda is my first complete Team Fortress 2 level: conceived, built, and released from initial concept to final optimization. Created in collaboration with several TF2Maps.net community members, it began as a technical and artistic experiment and grew into a fully realized multiplayer level that was officially licensed by Valve and added to Team Fortress 2 in the 2023 Summer Update.</p>
-        <p>I oversaw or directly handled every stage of development, including <strong>concept design</strong>, <strong>layout iteration</strong>, <strong>art direction</strong>, <strong>lighting</strong>, <strong>optimization</strong>, <strong>promotional materials</strong>, as well as communication with Valve for release and updates.</p>
-        <div class="spoiler">
-            <button class="spoiler-toggle">Tell me more!</button>
-            <div class="spoiler-content">
-                <p>This retrospective outlines the project’s evolution, design decisions, technical problem-solving, and team collaboration that turned an experimental prototype into an official, shipped game level.</p>
-
-                <p><strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2964421291" target="_blank">Steam Workshop</a><br>
-                <a href="https://wiki.teamfortress.com/wiki/Rotunda" target="_blank">Official TF2 Wiki</a><br>
-                <a href="https://www.youtube.com/watch?v=I25HIeLsrCk" target="_blank">Promotional Trailer</a><br>
-                <a hred="https://tf2maps.net/downloads/rotunda.15064/" target="_blank">Update History</a></strong></p>
-                
-                <h4>Idea</h4>
-                <p>The project began as an art and lighting test for a realistic German railway roundhouse, based on the Rundlokschuppen Rummelsburg in Berlin, which is a fantastic setpiece for level design all by itself. This proved challenging, as the brush-based Source Engine gets rather cranky about angled geometry. A great deal of trickery, experimentation, and optimization was required to create a convincing round (though technically 24-sided) building as the level’s central structure. During this stage, I worked primarily from photographic reference of the real building and similar industrial architecture.</p>
-
-                <p>The original concept was far more expansive and dynamic: the roundhouse was intended to serve as the middle control point in a larger Territorial Control level tentatively named tc_hex, comparable to Call of Duty’s and Battlefront’s Domination modes. The central point structure, initially more nimble, was meant to rotate during certain game states, forcing players to adapt to a dynamically shifting environment. After much experimentation with rotating geometry in the Source Engine, this feature was cut for reasons that should be obvious to anyone who has ever fought with this engine. Still, it was very fun to try, and I consider it an early lesson in recognizing when technical limits outweigh ambitious ideas.</p>
-
-                <div class="image-with-caption">
-                    <img src="rotunda/hex01.png" alt="Screenshot" class="centered-image">
-                    <img src="rotunda/hex02.png" alt="Screenshot" class="centered-image">
-                    <div class="caption">Early whitebox for tc_hex with fully open layout.</div>
+    <!-- LEVEL DESIGN Category -->
+    <div class="portfolio-category">
+        <h3 class="category-toggle">
+            <span class="category-arrow">▼</span>
+            Level Design
+        </h3>
+        <div class="category-content">
+            <div class="portfolio-item">
+                <h4>Rotunda <span class="h-weak">(Team Fortress 2)</span></h4>
+                <div class="tags">
+                    <span class="tag">Level Design</span>
+                    <span class="tag">Source Engine</span>
                 </div>
 
-                <h4>Layout</h4>
-                <p>Once the concept turned into a playable layout, I began testing in earnest using TF2Maps.net’s excellent testing and feedback infrastructure. Constant player feedback was instrumental in improving both the level and my own skills. Before the Steam Workshop release, Rotunda was tested over 30 times, usually with myself present.</p>
-
-                <p>The level underwent several reworks. The team spawns went through at least three iterations, one of which required rotating the level’s center by 45° to improve player flow toward mid. The central control point structure – originally a simple turntable with two trains facing each other – was reworked even more extensively. The final (less realistic) version serves as a piece of high ground and a visually dominant objective, while also blocking sightlines to aid performance and class balance. It can be considered a compromise between the thematic idea, gameplay feedback, and technical considerations.</p>
-
-                <p>Interestingly, the train hazard passing in front of the team spawns required very little iteration beyond bug fixes and collision improvements. Players immediately accepted it (and often praised it for its novelty).</p>
-
-                <p>I added new routes and flanks: a lower basement route for sneaky players, high platforms for explosive classes, and a “back gallery” almost encircling the central courtyard. Balancing sightlines here was challenging; since the layout uses mirror symmetry, any change had to be reflected across the level, potentially creating unintended new sightlines for the next iteration of testing.</p>
-
-                <p>This stage lasted roughly two months. Parts of the exterior were made in collaboration with community mapper Rhamkin. We worked in tandem, exchanging nightly builds and feedback.</p>
-
-                <h4>Artpass</h4>
-                <p>Some layouts require intense brainstorming to fit a theme, since fun TF2 layouts often ignore architectural (or, really, any) logic. Luckily, Rotunda’s artpass came naturally. I had already gathered references for specific areas, which helped establish the intended atmosphere and decide which stock TF2 assets to use, which to source from other community creators, and which to produce ourselves. During this stage I enlisted modellers FGD5 and Fancyy.</p>
-
-                <p>To meet the Summer Update deadline, I used as many existing assets as possible, but some things had to be made from scratch to sell the level’s premise. Two hero props stand out: FGD5’s steam engine, based on the German BR81 locomotive, and the control point’s nuclear waste tank, based on a child’s understanding of “radioactive danger.” As is standard for TF2 levels, I designed lighting and layout around these props to make them both visual anchors and navigation landmarks.</p>
-
-                <p>The main areas (mid, basement, gallery, exterior, spawns) draw from European railway infrastructure and industrial facilities. The level is meant to look abandoned, but not dead: someone clearly still uses it for storage, but it’s seen better days. TF2’s trademark sense of spytech and mystery is intended to come through in details: a truck engine still running, flickering computers, mysterious boxes on mysterious cargo platforms. Nothing is more fun, as both creator and player, than imagining the level as part of a larger unseen whole.</p>
-
-                <p>This stage lasted about a month. I handled texture recolors and some material edits myself, while bespoke models (steam engine, waste tank, metal beams, handrails) were created by our two modelers, often from my blockouts or specifications. We also used a modest selection of community assets in addition to TF2’s base library.</p>
-
-                <div class="image-with-caption">
-                    <img src="rotunda/traincars.gif" alt="Screenshot" class="centered-image">
-                    <div class="caption">Train cars as a dynamic player element.</div>
+                <div class="gallery">
+                    <img src="rotunda/01.jpg" alt="Screenshot">
+                    <img src="rotunda/02.jpg" alt="Screenshot">
+                    <img src="rotunda/03.jpg" alt="Screenshot">
+                    <img src="rotunda/04.jpg" alt="Screenshot">
+                    <img src="rotunda/05.jpg" alt="Screenshot">
+                    <img src="rotunda/06.jpg" alt="Screenshot">
+                    <img src="rotunda/07.jpg" alt="Screenshot">
+                    <img src="rotunda/08.jpg" alt="Screenshot">
+                    <img src="rotunda/10.jpg" alt="Screenshot">
+                    <img src="rotunda/11.jpg" alt="Screenshot">
+                    <img src="rotunda/12.jpg" alt="Screenshot">
+                    <img src="rotunda/13.jpg" alt="Screenshot">
                 </div>
+                <p>Rotunda is my first complete Team Fortress 2 level: conceived, built, and released from initial
+                    concept to final optimization. Created in collaboration with several TF2Maps.net community members,
+                    it began as a technical and artistic experiment and grew into a fully realized multiplayer level
+                    that was officially licensed by Valve and added to Team Fortress 2 in the 2023 Summer Update.</p>
+                <p>I oversaw or directly handled every stage of development, including <strong>concept design</strong>,
+                    <strong>layout iteration</strong>, <strong>art direction</strong>, <strong>lighting</strong>,
+                    <strong>optimization</strong>, <strong>promotional materials</strong>, as well as communication with
+                    Valve for release and updates.</p>
+                <div class="spoiler">
+                    <button class="spoiler-toggle">
+                        <span class="spoiler-arrow">▼</span>
+                        Tell me more!
+                    </button>
+                    <div class="spoiler-content">
+                        <p>This retrospective outlines the project’s evolution, design decisions, technical
+                            problem-solving, and team collaboration that turned an experimental prototype into an
+                            official, shipped game level.</p>
 
-                <h4>Optimization</h4>
-                <p>The Source Engine’s BSP visibility system can be helpful in reducing render load, but large, complex spaces tend to defeat it. Rotunda features both. Manual vis optimization mainly involved cutting visleafs to control what could be “seen” from specific areas, but some small layout changes were necessary too. I added sightline blockers, occluders, and manual prop fades to nearly every model. These changes reduced overdraw and improved framerates for the central area.</p>
+                        <p><strong><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2964421291"
+                                      target="_blank">Steam Workshop</a><br>
+                            <a href="https://wiki.teamfortress.com/wiki/Rotunda" target="_blank">Official TF2
+                                Wiki</a><br>
+                            <a href="https://www.youtube.com/watch?v=I25HIeLsrCk" target="_blank">Promotional
+                                Trailer</a><br>
+                            <a href="https://tf2maps.net/downloads/rotunda.15064/" target="_blank">Update
+                                History</a></strong></p>
 
-                <p>This stage lasted about a week.</p>
+                        <h4>Idea</h4>
+                        <p>The project began as an art and lighting test for a realistic German railway roundhouse,
+                            based on the Rundlokschuppen Rummelsburg in Berlin, which is a fantastic setpiece for level
+                            design all by itself. This proved challenging, as the brush-based Source Engine gets rather
+                            cranky about angled geometry. A great deal of trickery, experimentation, and optimization
+                            was required to create a convincing round (though technically 24-sided) building as the
+                            level’s central structure. During this stage, I worked primarily from photographic reference
+                            of the real building and similar industrial architecture.</p>
 
-                <div class="image-with-caption">
-                    <img src="rotunda/14.jpg" alt="Screenshot" class="centered-image">
-                    <div class="caption">Orthographic level overview showcasing angled geometry and out-of-bounds detailing.</div>
+                        <p>The original concept was far more expansive and dynamic: the roundhouse was intended to serve
+                            as the middle control point in a larger Territorial Control level tentatively named tc_hex,
+                            comparable to Call of Duty’s and Battlefront’s Domination modes. The central point
+                            structure, initially more nimble, was meant to rotate during certain game states, forcing
+                            players to adapt to a dynamically shifting environment. After much experimentation with
+                            rotating geometry in the Source Engine, this feature was cut for reasons that should be
+                            obvious to anyone who has ever fought with this engine. Still, it was extremely fun to try, and I
+                            consider it an early lesson in recognizing when technical limits outweigh ambitious
+                            ideas.</p>
+
+                        <div class="image-with-caption">
+                            <img src="rotunda/hex01.png" alt="Screenshot" class="centered-image">
+                            <img src="rotunda/hex02.png" alt="Screenshot" class="centered-image">
+                            <div class="caption">Early whitebox for tc_hex with fully open layout.</div>
+                        </div>
+
+                        <h4>Layout</h4>
+                        <p>Once the concept turned into a playable layout, I began testing in earnest using
+                            TF2Maps.net’s excellent testing and feedback infrastructure. Constant player feedback was
+                            instrumental in improving both the level and my own skills. Before the Steam Workshop
+                            release, Rotunda was tested over 30 times, usually with myself present.</p>
+
+                        <p>The level underwent several reworks. The team spawns went through at least three iterations,
+                            one of which required rotating the level’s center by 45° to improve player flow toward mid.
+                            The central control point structure – originally a simple turntable with two trains facing
+                            each other – was reworked even more extensively. The final (less realistic) version serves
+                            as a piece of high ground and a visually dominant objective, while also blocking sightlines
+                            to aid performance and class balance. It can be considered a compromise between the thematic
+                            idea, gameplay feedback, and technical considerations.</p>
+
+                        <p>Interestingly, the train hazard passing in front of the team spawns required very little
+                            iteration beyond bug fixes and collision improvements. Players immediately accepted it (and
+                            often praised it for its novelty).</p>
+
+                        <p>I added new routes and flanks: a lower basement route for sneaky players, high platforms for
+                            explosive classes, and a “back gallery” almost encircling the central courtyard. Balancing
+                            sightlines here was challenging; since the layout uses mirror symmetry, any change had to be
+                            reflected across the level, potentially creating unintended new sightlines for the next
+                            iteration of testing.</p>
+
+                        <p>This stage lasted roughly two months. Parts of the exterior were made in collaboration with
+                            community mapper Rhamkin. We worked in tandem, exchanging nightly builds and feedback.</p>
+
+                        <h4>Artpass</h4>
+                        <p>Some layouts require intense brainstorming to fit a theme, since fun TF2 layouts often ignore
+                            architectural (or, really, any) logic. Luckily, Rotunda’s artpass came naturally. I had
+                            already gathered references for specific areas, which helped establish the intended
+                            atmosphere and decide which stock TF2 assets to use, which to source from other community
+                            creators, and which to produce ourselves. During this stage I enlisted modelers FGD5 and
+                            Fancyy.</p>
+
+                        <p>To meet the Summer Update deadline, I used as many existing assets as possible, but some
+                            things had to be made from scratch to sell the level’s premise. Two hero props stand out:
+                            FGD5’s steam engine, based on the German BR81 locomotive, and the control point’s nuclear
+                            waste tank, based on a child’s understanding of “radioactive danger.” As is standard for TF2
+                            levels, I designed lighting and layout around these props to make them both visual anchors
+                            and navigation landmarks.</p>
+
+                        <p>The main areas (mid, basement, gallery, exterior, spawns) draw from European railway
+                            infrastructure and industrial facilities. The level is meant to look abandoned, but not
+                            dead: someone clearly still uses it for storage, but it’s seen better days. TF2’s trademark
+                            sense of spytech and mystery is intended to come through in details: a truck engine still
+                            running, flickering computers, mysterious boxes on mysterious cargo platforms. Nothing is
+                            more fun, as both creator and player, than imagining the level as part of a larger unseen
+                            whole.</p>
+
+                        <p>This stage lasted about a month. I handled texture recolors and some material edits myself,
+                            while our two modelers created bespoke models (steam engine, waste tank, metal beams, handrails), often from my blockouts or specifications. We also used a modest selection of
+                            community assets in addition to TF2’s base library.</p>
+
+                        <div class="image-with-caption">
+                            <img src="rotunda/traincars.gif" alt="Screenshot" class="centered-image">
+                            <div class="caption">Train cars as a dynamic player element.</div>
+                        </div>
+
+                        <h4>Optimization</h4>
+                        <p>The Source Engine’s BSP visibility system can be helpful in reducing render load, but large,
+                            complex spaces tend to defeat it. Rotunda features both. Manual vis optimization mainly
+                            involved cutting visleafs to control what could be “seen” from specific areas, but some
+                            small layout changes were necessary too. I added sightline blockers, occluders, and manual
+                            prop fades to nearly every model. These changes reduced overdraw and improved framerates for
+                            the central area.</p>
+
+                        <p>This stage lasted about a week.</p>
+
+                        <div class="image-with-caption">
+                            <img src="rotunda/14.jpg" alt="Screenshot" class="centered-image">
+                            <div class="caption">Orthographic level overview showcasing angled geometry and
+                                out-of-bounds detailing.
+                            </div>
+                        </div>
+
+                        <h4>Release &amp; Promotion</h4>
+                        <p>As the project neared completion, I created promotional graphics such as the Steam Workshop
+                            thumbnail and other related materials. I also contacted Tails8521 about producing a gameplay
+                            trailer to increase visibility (and because it’s cool).</p>
+
+                        <p>Rhamkin and I combed through playtest demos (in-game recordings) to identify interesting
+                            moments, which Tails used to construct and film a cinematic flythrough of the level. As a
+                            bonus, this process helped give the level a few minor touch-ups and lighting improvements
+                            that were previously overlooked.</p>
+
+                        <p>Eventually, the project was selected by Valve for inclusion in Team Fortress 2. I coordinated
+                            the handover of project files to Valve and implemented additional changes based on technical
+                            requirements and feedback.</p>
+
+                        <div class="image-with-caption">
+                            <img src="rotunda/thumbnail.png" alt="Screenshot" class="centered-image">
+                            <div class="caption">Steam Workshop thumbnail.</div>
+                        </div>
+
+                        <h4>Teamwork</h4>
+                        <p>While I consider Rotunda “my” project, it would not have been possible without the team.
+                            Rhamkin’s guidance and experience, FGD5’s and Fancyy’s modeling and texturing, and
+                            Tails8521’s trailer were all essential to realizing the level’s full potential.</p>
+
+                        <p>While this project was at times stressful, I blame this fully on my own (relative)
+                            inexperience, as working in collaboration with my fellow community members and creatives was
+                            a fantastic experience from start to finish. Communication required patience from all of us,
+                            since every team member was from a different European country. Humor helped here, as well as
+                            Rhamkin’s contagious optimism regarding the map’s success.</p>
+
+                        <p>Through this project, I learned about level design, player flow, scripting, environmental
+                            art, project management, and intercultural communication, and probably a dozen other
+                            subjects. The experience and its success cemented my passion for level design and my desire
+                            to enter the game industry professionally. It remains a foundational experience in the way I
+                            think about spatial design.</p>
+
+                        <h4>Rotunda was made in collaboration with:</h4>
+                        <ul>
+                            <li>Artpass: <strong>Rhafael "Rhamkin" Oliveira</strong> (<a
+                                    href="https://steamcommunity.com/profiles/76561198166982173"
+                                    target="_blank">Steam</a>)
+                            </li>
+                            <li>Bespoke models: <strong>Roman "FanCyy" Malashkevich</strong> (<a
+                                    href="https://steamcommunity.com/id/_fancyy" target="_blank">Steam</a>)
+                            </li>
+                            <li>Bespoke models: <strong>Alex "FGD5" Stewart</strong> (<a
+                                    href="https://steamcommunity.com/id/fgd5" target="_blank">Steam</a>)
+                            </li>
+                            <li>Promotional trailer: <strong>Bertrand "Tails8521" Penguilly</strong> (<a
+                                    href="https://steamcommunity.com/id/tails8521" target="_blank">Steam</a>)
+                            </li>
+                        </ul>
+
+                        <div class="image-with-caption">
+                            <img src="rotunda/testimonies.png" alt="Screenshot" class="centered-image">
+                            <div class="caption">Promotional image with playtesting feedback by TF2Maps players.</div>
+                        </div>
+                    </div>
                 </div>
-
-                <h4>Release &amp; Promotion</h4>
-                <p>As the project neared completion, I created promotional graphics such as the Steam Workshop thumbnail and other related materials. I also contacted Tails8521 about producing a gameplay trailer to increase visibility (and because it’s cool).</p>
-
-                <p>Rhamkin and I combed through playtest demos (in-game recordings) to identify interesting moments, which Tails used to construct and film a cinematic flythrough of the level. As a bonus, this process helped give the level a few minor touch-ups and lighting improvements that were previously overlooked.</p>
-
-                <p>Eventually, the project was selected by Valve for inclusion in Team Fortress 2. I coordinated the handover of project files to Valve and implemented additional changes based on technical requirements and feedback.</p>
-
-                <div class="image-with-caption">
-                    <img src="rotunda/thumbnail.png" alt="Screenshot" class="centered-image">
-                    <div class="caption">Steam Workshop thumbnail.</div>
+            </div>
+            <div class="portfolio-item">
+                <h4>Stormbreaker <span class="h-weak">(Team Fortress 2)</span></h4>
+                <div class="tags">
+                    <span class="tag">Level Design</span>
+                    <span class="tag">Source Engine</span>
                 </div>
-                
-                <h4>Teamwork</h4>
-                <p>While I consider Rotunda “my” project, it would not have been possible without the team. Rhamkin’s guidance and experience, FGD5’s and Fancyy’s modeling and texturing, and Tails8521’s trailer were all essential to realizing the level’s full potential.</p>
-
-                <p>While this project was at times stressful, I blame this fully on my own (relative) inexperience, as working in collaboration with my fellow community members and creatives was a fantastic experience from start to finish. Communication required patience from all of us, since every team member was from a different European country. Humor helped here, as well as Rhamkin’s contagious optimism regarding the map’s success.</p>
-
-                <p>Through this project, I learned about level design, player flow, scripting, environmental art, project management, and intercultural communication, and probably a dozen other subjects. The experience and its success cemented my passion for level design and my desire to enter the game industry professionally. It remains a foundational experience in the way I think about spatial design.</p>
-
-                <h4>Rotunda was made in collaboration with:</h4>
-                <ul>
-                    <li>Artpass: <strong>Rhafael "Rhamkin" Oliveira</strong> (<a href="https://steamcommunity.com/profiles/76561198166982173" target="_blank">Steam</a>)</li>
-                    <li>Bespoke models: <strong>Roman "FanCyy" Malashkevich</strong> (<a href="https://steamcommunity.com/id/_fancyy" target="_blank">Steam</a>)</li>
-                    <li>Bespoke models: <strong>Alex "FGD5" Stewart</strong> (<a href="https://steamcommunity.com/id/fgd5" target="_blank">Steam</a>)</li>
-                    <li>Promotional trailer: <strong>Bertrand "Tails8521" Penguilly</strong> (<a href="https://steamcommunity.com/id/tails8521" target="_blank">Steam</a>)</li>
-                </ul>
-
-                <div class="image-with-caption">
-                    <img src="rotunda/testimonies.png" alt="Screenshot" class="centered-image">
-                    <div class="caption">Promotional image with playtesting feedback by TF2Maps players.</div>
+                <div class="gallery">
+                    <img src="placeholder1.jpg" alt="Screenshot 1">
+                    <img src="placeholder2.jpg" alt="Screenshot 2">
+                </div>
+                <p>Description of Stormbreaker level design project...</p>
+                <div class="spoiler">
+                    <button class="spoiler-toggle">
+                        <span class="spoiler-arrow">▼</span>
+                        Tell me more!
+                    </button>
+                    <div class="spoiler-content">
+                        <!-- content here -->
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="portfolio-item">
-        <h3>Project Title Two</h3>
-        <div class="tags">
-            <span class="tag">Gameplay Systems</span>
-            <span class="tag">Unity</span>
-            <span class="tag">Prototyping</span>
-        </div>
-        <div class="gallery">
-            <img src="placeholder4.jpg" alt="Screenshot 1">
-            <img src="placeholder5.jpg" alt="Screenshot 2">
-        </div>
-        <p>Description text here. Include design intent, challenges overcome, and what you learned through iteration.</p>
-        <div class="spoiler">
-            <button class="spoiler-toggle">Tell me more!</button>
-            <div class="spoiler-content">
-                <p>Additional project commentary: describe scripting solutions, mechanics tuning, or player feedback integration. Summarize results and key takeaways.</p>
+    <!-- GAME DESIGN Category -->
+    <div class="portfolio-category">
+        <h3 class="category-toggle">
+            <span class="category-arrow">▼</span>
+            Game Design
+        </h3>
+        <div class="category-content">
+            <div class="portfolio-item">
+                <h4>The Fifth World <span class="h-weak">(Tabletop RPG)</span></h4>
+                <div class="tags">
+                    <span class="tag">Game Design</span>
+                    <span class="tag">Tabletop RPG</span>
+                    <span class="tag">World Building</span>
+                </div>
+                <div class="gallery">
+                    <img src="placeholder3.jpg" alt="Screenshot 1">
+                    <img src="placeholder4.jpg" alt="Screenshot 2">
+                </div>
+                <p>Description of The Fifth World tabletop RPG project...</p>
+                <div class="spoiler">
+                    <button class="spoiler-toggle">
+                        <span class="spoiler-arrow">▼</span>
+                        Tell me more!
+                    </button>
+                    <div class="spoiler-content">
+                        <!-- content here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <h4>Reckless Rail <span class="h-weak">(Design Document)</span></h4>
+                <div class="tags">
+                    <span class="tag">Game Design</span>
+                    <span class="tag">Documentation</span>
+                    <span class="tag">Concept Development</span>
+                </div>
+                <div class="gallery">
+                    <img src="placeholder5.jpg" alt="Screenshot 1">
+                    <img src="placeholder6.jpg" alt="Screenshot 2">
+                </div>
+                <p>Description of Reckless Rail design document...</p>
+                <div class="spoiler">
+                    <button class="spoiler-toggle">
+                        <span class="spoiler-arrow">▼</span>
+                        Tell me more!
+                    </button>
+                    <div class="spoiler-content">
+                        <!-- content here -->
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Add more portfolio-item blocks as needed -->
+    <!-- 2D Category -->
+    <div class="portfolio-category">
+        <h3 class="category-toggle">
+            <span class="category-arrow">▼</span>
+            2D
+        </h3>
+        <div class="category-content">
+            <div class="portfolio-item">
+                <h4>Corrent Battlemap <span class="h-weak">(Fantasyflight Star Wars RPG)</span></h4>
+                <div class="tags">
+                    <span class="tag">2D Art</span>
+                    <span class="tag">Map Design</span>
+                    <span class="tag">RPG Assets</span>
+                </div>
+                <div class="gallery">
+                    <img src="placeholder7.jpg" alt="Screenshot 1">
+                    <img src="placeholder8.jpg" alt="Screenshot 2">
+                </div>
+                <p>Description of Corrent Battlemap project...</p>
+                <div class="spoiler">
+                    <button class="spoiler-toggle">
+                        <span class="spoiler-arrow">▼</span>
+                        Tell me more!
+                    </button>
+                    <div class="spoiler-content">
+                        <!-- content here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <h4>City One Metro <span class="h-weak">(RPG Map)</span></h4>
+                <div class="tags">
+                    <span class="tag">2D Art</span>
+                    <span class="tag">Map Design</span>
+                    <span class="tag">Urban Planning</span>
+                </div>
+                <div class="gallery">
+                    <img src="placeholder9.jpg" alt="Screenshot 1">
+                    <img src="placeholder10.jpg" alt="Screenshot 2">
+                </div>
+                <p>Description of City One Metro map project...</p>
+                <div class="spoiler">
+                    <button class="spoiler-toggle">
+                        <span class="spoiler-arrow">▼</span>
+                        Tell me more!
+                    </button>
+                    <div class="spoiler-content">
+                        <!-- content here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Engagement -->
+    <div class="portfolio-category">
+        <h3 class="category-toggle">
+            <span class="category-arrow">▼</span>
+            2D
+        </h3>
+        <div class="category-content">
+            <div class="portfolio-item">
+                <h4>Brokk's Assorted Mapping Fixes <span class="h-weak">(Community Tool Pack)</span></h4>
+                <div class="tags">
+                    <span class="tag">2D Art</span>
+                    <span class="tag">Map Design</span>
+                    <span class="tag">RPG Assets</span>
+                </div>
+                <div class="gallery">
+                    <img src="placeholder7.jpg" alt="Screenshot 1">
+                    <img src="placeholder8.jpg" alt="Screenshot 2">
+                </div>
+                <p>Description of BAMF...</p>
+                <div class="spoiler">
+                    <button class="spoiler-toggle">
+                        <span class="spoiler-arrow">▼</span>
+                        Tell me more!
+                    </button>
+                    <div class="spoiler-content">
+                        <!-- content here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <footer>
     <p>© 2025 Paul Frank Clausen</p>
-    </div>
 </footer>
 
 <script src="script.js"></script>

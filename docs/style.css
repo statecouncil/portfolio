@@ -1,3 +1,38 @@
+/* Portfolio Category Styles */
+.portfolio-category {
+    margin-bottom: 1.5em;
+    border-left: 3px solid #333; /* Thin grey line on the left, same as spoiler content */
+    padding-left: 1em; /* Add some spacing from the border */
+}
+
+.category-toggle {
+    cursor: pointer;
+    padding: 1em 0; /* Remove horizontal padding since we now have padding-left on the parent */
+    margin: 0;
+    background: transparent;
+    transition: background 0.2s ease;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+.category-toggle:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.category-content {
+    padding: 0 0 1em 0; /* Remove horizontal padding since parent now has padding-left */
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.category-content.collapsed {
+    max-height: 0;
+    padding: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -86,8 +121,32 @@ a:hover {
     background: #76a2ff;
 }
 
+.category-arrow {
+    transition: transform 0.3s ease;
+    font-size: 0.8em;
+    color: #f4a261;
+}
+
+.category-toggle.collapsed .category-arrow {
+    transform: rotate(-90deg);
+}
+
 .portfolio-item {
-    margin-bottom: 3em;
+    margin-bottom: 2em;
+    padding: 1.5em;
+    background: #111;
+    //border-radius: 6px;
+    //border: 1px solid #2a2a2a;
+}
+
+.portfolio-item:last-child {
+    margin-bottom: 0;
+}
+
+.portfolio-item h4 {
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 0.5em;
 }
 
 .tags {
@@ -216,6 +275,19 @@ footer {
     cursor: pointer;
     padding: 0;
     font-size: 1em;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.spoiler-arrow {
+    transition: transform 0.3s ease;
+    font-size: 0.8em;
+    color: #f4a261;
+}
+
+.spoiler button.collapsed .spoiler-arrow {
+    transform: rotate(-90deg);
 }
 
 .spoiler-content {
@@ -238,5 +310,13 @@ footer {
 
     .gallery {
         justify-content: center; /* Center the gallery on mobile */
+    }
+
+    .category-toggle {
+        padding: 0.8em;
+    }
+
+    .portfolio-item {
+        padding: 1em;
     }
 }
