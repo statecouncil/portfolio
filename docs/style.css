@@ -192,6 +192,7 @@ h2, h3, h4, h5 {
     padding: 0.5em 1em;
     border: none;
     border-radius: 4px;
+    font-size: 1em;
     font-weight: bold;
     cursor: pointer;
     transition: background 0.2s ease;
@@ -260,11 +261,40 @@ h2, h3, h4, h5 {
 ────────────────────────────────── */
 
 .portfolio-item {
-    margin-bottom: 2em;
-    padding: 1.5em;
-    background: #111;
+    background: #1a1a1a;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
-.portfolio-item:last-child { margin-bottom: 0; }
+
+.portfolio-hero {
+    width: 100%;
+    aspect-ratio: 2560 / 1080;
+    object-fit: cover;
+    display: block;
+}
+
+.portfolio-item-body {
+    padding: 1.2em 1.5em 1.5em;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.portfolio-item-body h3 {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.portfolio-item-body p {
+    flex: 1;
+    margin-bottom: 1em;
+}
+
+.portfolio-item-body .detail-links {
+    margin: 0;
+}
 
 .tags {
     margin: 0.5em 0 1em;
@@ -302,41 +332,6 @@ h2, h3, h4, h5 {
 }
 
 /* ────────────────────────────────
-   Inline Images and Captions
-────────────────────────────────── */
-
-.centered-image {
-    display: block;
-    margin: 1.5em auto;
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-.centered-image.small  { max-width: 300px; }
-.centered-image.medium { max-width: 500px; }
-.centered-image.large  { max-width: 700px; }
-
-.image-with-caption {
-    text-align: center;
-    margin: 1.5em 0;
-}
-.image-with-caption img {
-    display: block;
-    margin: 0 auto 0.5em;
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-.image-with-caption .caption {
-    font-size: 0.9em;
-    color: #999;
-    font-style: italic;
-    margin-top: 0.5em;
-}
-
-/* ────────────────────────────────
    Lightbox
 ────────────────────────────────── */
 
@@ -353,42 +348,6 @@ h2, h3, h4, h5 {
     max-width: 90%;
     max-height: 90%;
     border-radius: 8px;
-}
-
-/* ────────────────────────────────
-   Spoiler ("More...") Elements
-────────────────────────────────── */
-
-.spoiler {
-    margin-top: 0.5em;
-}
-.spoiler button {
-    background: none;
-    border: none;
-    color: #f4a261;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 0;
-    font-size: 1em;
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-}
-.spoiler-arrow {
-    transition: transform 0.3s ease;
-    font-size: 0.8em;
-    color: #f4a261;
-}
-.spoiler button.collapsed .spoiler-arrow {
-    transform: rotate(-90deg);
-}
-.spoiler-content {
-    display: none;
-    margin-top: 0.5em;
-    padding: 0 1em;
-    color: #ccc;
-    border: 2px solid #333;
-    border-top: none;
 }
 
 /* ────────────────────────────────
