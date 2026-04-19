@@ -520,8 +520,35 @@ h2, h3, h4, h5 {
     text-decoration: none;
 }
 
-.detail-credits figure {
-    margin-top: 0.5em;
+.detail-credits {
+    border-top: none;
+    border-bottom: none;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+section:has(+ .detail-credits) {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+section:has(+ .detail-credits) h2 {
+    border-bottom: none;
+}
+
+section:has(+ .detail-credits) h2::before {
+    display: none;
+}
+
+.detail-credits h3 {
+    border-bottom: none;
+}
+
+.trademark {
+    font-size: 0.8em;
+    color: #555;
+    text-align: center;
+    margin-top: 1.5em;
 }
 
 .detail-credits ul {
