@@ -42,6 +42,17 @@ document.querySelectorAll('.centered-image').forEach(img => {
     img.style.cursor = 'pointer';
 });
 
+// Lightbox behavior for figure images (detail pages)
+document.querySelectorAll('figure img').forEach(img => {
+    img.addEventListener('click', () => {
+        lightbox.innerHTML = '';
+        const full = document.createElement('img');
+        full.src = img.src;
+        lightbox.appendChild(full);
+        lightbox.style.display = 'flex';
+    });
+});
+
 lightbox.addEventListener('click', () => {
     lightbox.style.display = 'none';
 });
