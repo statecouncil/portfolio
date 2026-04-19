@@ -84,6 +84,11 @@ li { text-align: left; }
    Layout Containers
 ────────────────────────────────── */
 
+section {
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.3em;
+}
+
 section, footer {
     max-width: 900px;
     margin: auto;
@@ -460,8 +465,6 @@ h2, h3, h4, h5 {
 .detail-content h2 {
     text-align: center;
     text-transform: uppercase;
-    border-bottom: 1px solid #333;
-    padding-bottom: 0.3em;
     margin-bottom: 1em;
     margin-top: 0;
 }
@@ -515,10 +518,6 @@ h2, h3, h4, h5 {
 .detail-links a:hover {
     background: #333;
     text-decoration: none;
-}
-
-.detail-content section {
-    margin-bottom: 3em;
 }
 
 .detail-credits figure {
