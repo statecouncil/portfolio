@@ -465,6 +465,16 @@ h2, h3, h4, h5 {
     margin-bottom: 1em;
     margin-top: 0;
 }
+.detail-content h2::before{
+    content: "\2234";
+    display: block;
+    font-family: 'IBM Plex Math', serif;
+    font-size: 0.9em;
+    color: #f4a261;
+    opacity: 0.7;
+    margin-bottom: 0.3em;
+    font-weight: 400;
+}
 
 .detail-lead {
     border-left: 3px solid #f4a261;
@@ -590,6 +600,11 @@ figure.centered {
 figure.centered img {
     max-width: 700px;
     margin: 0 auto;
+}
+figure.centered figcaption {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 figure img {
