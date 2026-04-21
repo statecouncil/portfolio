@@ -15,11 +15,12 @@ document.querySelectorAll('.gallery img').forEach(img => {
 });
 
 // Lightbox behavior for figure images (detail pages)
+// Add data-full="path/to/full.jpg" to show a different image on click than what is displayed
 document.querySelectorAll('figure img').forEach(img => {
     img.addEventListener('click', () => {
         lightbox.innerHTML = '';
         const full = document.createElement('img');
-        full.src = img.src;
+        full.src = img.dataset.full || img.src;
         lightbox.appendChild(full);
         lightbox.style.display = 'flex';
     });

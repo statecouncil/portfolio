@@ -69,10 +69,11 @@ button {
     font-family: inherit;
 }
 
-strong { color: #d8d8e4; font-weight: 500; }
+strong { color: #e1e1e1; font-weight: 600; }
 
 a {
     color: #5186e8;
+    font-weight: 600;
     text-decoration: none;
 }
 a:hover { text-decoration: underline; }
